@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#include "mgos_neopixel.h"
+#include "mgos_neopixel_four.h"
 
 #include "common/cs_dbg.h"
 #include "mgos_bitbang.h"
