@@ -25,7 +25,7 @@
 #include "mgos_gpio.h"
 #include "mgos_system.h"
 
-#define NUM_CHANNELS 3 /* r, g, b */
+#define NUM_CHANNELS 4 /* r, g, b, w */
 
 struct mgos_neopixel {
   int pin;
@@ -49,25 +49,28 @@ struct mgos_neopixel *mgos_neopixel_create(int pin, int num_pixels,
   return np;
 }
 
-void mgos_neopixel_set(struct mgos_neopixel *np, int i, int r, int g, int b) {
+void mgos_neopixel_set(struct mgos_neopixel *np, int i, int r, int g, int b, int w) {
   uint8_t *p = np->data + i * NUM_CHANNELS;
   switch (np->order) {
     case MGOS_NEOPIXEL_ORDER_RGB:
       p[0] = r;
       p[1] = g;
       p[2] = b;
+      p[3] = w;
       break;
 
     case MGOS_NEOPIXEL_ORDER_GRB:
       p[0] = g;
       p[1] = r;
       p[2] = b;
+      p[3] = w;
       break;
 
     case MGOS_NEOPIXEL_ORDER_BGR:
       p[0] = b;
       p[1] = g;
       p[2] = r;
+      p[3] = w;
       break;
 
     default:

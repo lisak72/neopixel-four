@@ -61,7 +61,7 @@ struct mgos_neopixel *mgos_neopixel_create(int pin, int num_pixels,
  * Note that this only affects in-memory value of the pixel; you'll need to
  * call `mgos_neopixel_show()` to apply changes.
  */
-void mgos_neopixel_set(struct mgos_neopixel *np, int i, int r, int g, int b);
+void mgos_neopixel_set(struct mgos_neopixel *np, int i, int r, int g, int b, int w);
 
 /*
  * Clear in-memory values of the pixels.
