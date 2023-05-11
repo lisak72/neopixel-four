@@ -100,6 +100,6 @@ void mgos_neopixel_free(struct mgos_neopixel *np) {
   free(np);
 }
 
-bool mgos_neopixel_init(void) {
+bool mgos_neopixel_four_init(void) {
   return true;
 }

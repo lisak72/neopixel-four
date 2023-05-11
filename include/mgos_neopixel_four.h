@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 
-#ifndef CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_H_
-#define CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_H_
+#ifndef CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_FOUR_H_
+#define CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_FOUR_H_
 
 #include <stdbool.h>
 
@@ -82,4 +82,4 @@ void mgos_neopixel_free(struct mgos_neopixel *np);
 }
 #endif
 
-#endif /* CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_H_ */
+#endif /* CS_MOS_LIBS_NEOPIXEL_INCLUDE_MGOS_NEOPIXEL_FOUR_H_ */
