@@ -24,6 +24,7 @@
 #include "mgos_bitbang.h"
 #include "mgos_gpio.h"
 #include "mgos_system.h"
+#include "mgos_time.h"
 
 #define NUM_CHANNELS 4 /* r, g, b, w */
 
@@ -85,13 +86,13 @@ void mgos_neopixel_clear(struct mgos_neopixel *np) {
 
 void mgos_neopixel_show(struct mgos_neopixel *np) {
   mgos_gpio_write(np->pin, 0);
-  mgos_usleep(300);
+  delay_us(300);
 #if MGOS_ENABLE_BITBANG
   mgos_bitbang_write_bits(np->pin, MGOS_DELAY_100NSEC, 3, 8, 8, 3, np->data,
                           np->num_pixels * NUM_CHANNELS);
 #endif
   mgos_gpio_write(np->pin, 0);
-  mgos_usleep(300);
+  delay_us(300);
   mgos_gpio_write(np->pin, 1);
 }
 
@@ -102,4 +103,10 @@ void mgos_neopixel_free(struct mgos_neopixel *np) {
 
 bool mgos_neopixel_four_init(void) {
   return true;
+}
+
+void delay_us(uint64_t microsecs){
+  uint64_t actTime;
+  actTime=mgos_uptime_micros();
+  while ((actTime+microsecs)>mgos_uptime_micros()) {};
 }

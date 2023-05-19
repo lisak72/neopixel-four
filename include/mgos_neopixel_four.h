@@ -78,6 +78,11 @@ void mgos_neopixel_show(struct mgos_neopixel *np);
  */
 void mgos_neopixel_free(struct mgos_neopixel *np);
 
+/*
+ * Delay number of microseconds / depend on mgos_uptime.
+ */
+void delay_us(uint64_t microsecs);
+
 #if defined(__cplusplus)
 }
 #endif
